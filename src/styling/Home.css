@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-right: calc(var(--bs-gutter-x) * -.5);
+    padding-left: calc(var(--bs-gutter-x) * -.5);
+}
+
+.main-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: none;
+    margin: -.5rem 0rem;
+}
+
+.main-div img {
+    padding: .5rem;
+}
+
+.main-div img:hover {
+    filter: brightness(85%);
+    cursor: pointer;
+}
