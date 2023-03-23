@@ -11,14 +11,61 @@
 }
 
 .left, .right {
-    border: 2px solid black;
     height: 100vh;
-    width: auto;
     width: 30vw;
+}
+
+.left, .right {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+
+.right-inner-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    height: 52.5%;
+    width: 100%;
+}
+
+.heart {
+    height: 2rem;
+    width: 2rem;
+    font-weight: 100;
+    cursor: pointer;
 }
 
 .arrow {
     height: 2.5rem;
     width: 2.5rem;
     font-weight: 100;
+    cursor: pointer;
+}
+
+.X {
+    height: 2.25rem;
+    width: 2.25rem;
+    font-weight: 100;
+    cursor: pointer;
+}
+
+.heart {
+    color: red;
+    opacity: 0.6;
+}
+
+.heart-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart-div span {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 100;
+    color: red;
+    opacity: 0.6;
 }

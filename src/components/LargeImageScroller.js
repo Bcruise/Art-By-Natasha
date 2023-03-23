@@ -1,33 +1,40 @@
 import '../styling/LargeImageScroller.css';
-import img from '../images/Calendar.png';
-import img1 from '../images/ReadMe.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight, faX  } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 
-function LargeImageScroller() {  
-  const testArray = [img,img1,img,img1,img,img1,img,img1,img];
-  //change image  
-  let shownImage = testArray[0];
-  let index = 0;
-  const changeImage = () => {
-    index ++;
-    shownImage = testArray[index];
-  }
+
+function LargeImageScroller({setShowLargeImageScroller, testArray, testArrayNum, setTestArrayNum, setFadeOutInOrNeither}) {  
   
+  // scroll through the portfolio images
+  const changeImage = () => {
+    if (testArrayNum !== (testArray.length-1)) {
+      setTestArrayNum( testArrayNum + 1 );
+    } else {
+      setTestArrayNum(0);
+    }    
+  }
+
   return (
     <div className="largeImage col-12">
-        <div className="left">
-        
+        <div className="left p-3">
+          <div className="heart-div">
+            <FontAwesomeIcon icon={faHeart} className="heart p-2"/>
+            <span className="p-2">0</span>
+          </div>
         </div> 
-        <img 
-          src={shownImage} 
+        {testArray.map(image => (image.id == testArrayNum && <img 
+          src={image.image} 
           alt="img" 
-          className="col-4" 
-          onClick={changeImage}>
-        </img>
-        <div className="right">
-          <FontAwesomeIcon icon={faArrowRight} className="arrow"/>
+          className="col-4"
+        >
+        </img>))}
+        <div className="right p-3">
+          <div className="right-inner-div">
+            <FontAwesomeIcon icon={faX} className="X" onClick={() => {setShowLargeImageScroller(false) ; setFadeOutInOrNeither('Going To Home')}}/>
+            <FontAwesomeIcon icon={faArrowRight} className="arrow" onClick={() => changeImage()}/>
+          </div>
         </div>
     </div>
   );

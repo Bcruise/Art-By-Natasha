@@ -10,7 +10,8 @@ function App() {
     <Router>
     <>
       <Routes> 
-        <Route path="/" element={<LargeImageScroller />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/Image" element={<LargeImageScroller />} />
       </Routes>
     </>
   </Router>
