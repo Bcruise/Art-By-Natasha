@@ -4,8 +4,7 @@ import { faArrowRight, faX  } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 
-
-function LargeImageScroller({setShowLargeImageScroller, testArray, testArrayNum, setTestArrayNum, setFadeOutInOrNeither}) {  
+function LargeImageScroller({testArray, testArrayNum, setTestArrayNum, ToggleLargeImage}) {  
   
   // scroll through the portfolio images
   const changeImage = () => {
@@ -32,7 +31,7 @@ function LargeImageScroller({setShowLargeImageScroller, testArray, testArrayNum,
         </img>))}
         <div className="right p-3">
           <div className="right-inner-div">
-            <FontAwesomeIcon icon={faX} className="X" onClick={() => {setShowLargeImageScroller(false) ; setFadeOutInOrNeither('Going To Home')}}/>
+            <FontAwesomeIcon icon={faX} className="X" onClick={() => ToggleLargeImage()}/>
             <FontAwesomeIcon icon={faArrowRight} className="arrow" onClick={() => changeImage()}/>
           </div>
         </div>

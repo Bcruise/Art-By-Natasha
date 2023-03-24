@@ -1,3 +1,30 @@
+.home {
+    position: fixed;
+    height: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: scroll;
+    opacity: 1;
+}
+
+.largeImageHome {
+    position: fixed;
+    opacity: 1;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
 .container {
     display: flex;
     flex-direction: row;
@@ -5,6 +32,7 @@
     align-items: center;
     padding-right: calc(var(--bs-gutter-x) * -.5);
     padding-left: calc(var(--bs-gutter-x) * -.5);
+    display: unset;
 }
 
 .main-div {
