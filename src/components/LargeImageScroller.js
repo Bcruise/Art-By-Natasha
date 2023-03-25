@@ -31,7 +31,9 @@ function LargeImageScroller({testArray, testArrayNum, setTestArrayNum, ToggleLar
         </img>))}
         <div className="right p-3">
           <div className="right-inner-div">
-            <FontAwesomeIcon icon={faX} className="X" onClick={() => ToggleLargeImage()}/>
+            <button onClick={() => ToggleLargeImage()}>
+              <FontAwesomeIcon icon={faX} className="X" />
+            </button>
             <FontAwesomeIcon icon={faArrowRight} className="arrow" onClick={() => changeImage()}/>
           </div>
         </div>

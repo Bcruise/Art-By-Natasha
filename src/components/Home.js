@@ -21,35 +21,34 @@ function Home() {
       setShowAddPage(true);
     }
   });
-
+  
   // Toggle between home and large image pages
   const ToggleLargeImage = () => {
-    const home = $('.home');
-    if (home[0].style.display === '') {
+    if($('.home')[0].style.opacity === '') {
       $('.largeImageHome').css({
-        display: 'unset',
-        animation: 'fadeIn 3s'
-    });
+        opacity: 1
+      });
       $('.home').css({
-        display: 'none',
-        animation: 'fadeOut 3s'
-    });
-    } else {
+        opacity: 0,
+        display: 'none'
+      })
+      
+
+    } else if ($('.home')[0].style.opacity == 0) {
       $('.largeImageHome').css({
-        display: 'none',
-        animation: 'fadeOut 3s'
-    });
-    $('.home').css({
-      display: '',
-      animation: 'fadeIn 3s'
-  });
+        opacity: 0
+      });
+      $('.home').css({
+        opacity: 1,
+        display: 'unset'
+      });
     }
   }
 
   return (
 
     <>
-      <div className="home">
+      <div className="home faded">
         <Navbar />
          <div className="container">
           <div className="row main-div col-12">
@@ -66,7 +65,7 @@ function Home() {
       </div>
     
     
-      <div className="largeImageHome">
+      <div className="largeImageHome faded">
           <LargeImageScroller  
             testArray={testArray} 
             testArrayNum={testArrayNum} 
