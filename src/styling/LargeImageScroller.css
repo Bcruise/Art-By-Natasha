@@ -21,13 +21,20 @@
     align-items: start;
 }
 
-.right-inner-div {
+.right-inner-div, .left-inner-div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: end;
     height: 52.5%;
     width: 100%;
+}
+
+.right-inner-div {
+    align-items: end;
+}
+
+.left-inner-div {
+    align-items: start;
 }
 
 .heart {
@@ -56,16 +63,15 @@
     opacity: 0.6;
 }
 
-.heart-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.heart-div span {
+.left-inner-div span {
     font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
     font-weight: 100;
     color: red;
     opacity: 0.6;
+}
+
+.right-inner-div button {
+    background-color: white;
+    border: none;
 }

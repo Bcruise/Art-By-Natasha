@@ -9,6 +9,7 @@
 
 .home {
     z-index: 2;
+    overflow-x: hidden;
 }
 
 .largeImageHome {

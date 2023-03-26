@@ -1,6 +1,6 @@
 import '../styling/LargeImageScroller.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faX  } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faArrowRight, faX  } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 
@@ -18,9 +18,12 @@ function LargeImageScroller({testArray, testArrayNum, setTestArrayNum, ToggleLar
   return (
     <div className="largeImage col-12">
         <div className="left p-3">
-          <div className="heart-div">
-            <FontAwesomeIcon icon={faHeart} className="heart p-2"/>
-            <span className="p-2">0</span>
+          <div className="left-inner-div">
+            <div className="heart-div">
+              <FontAwesomeIcon icon={faHeart} className="heart p-2"/>
+              <span className="p-2">0</span>
+            </div>
+            <FontAwesomeIcon icon={faArrowLeft} className="arrow" onClick={() => changeImage()}/>
           </div>
         </div> 
         {testArray.map(image => (image.id == testArrayNum && <img 
