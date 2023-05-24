@@ -15,13 +15,20 @@
     width: 30vw;
 }
 
-.left, .right {
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+} 
+
+.right {
     display: flex;
     justify-content: start;
     align-items: start;
 }
 
-.right-inner-div, .left-inner-div {
+.right-inner-div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -31,10 +38,6 @@
 
 .right-inner-div {
     align-items: end;
-}
-
-.left-inner-div {
-    align-items: start;
 }
 
 .heart {

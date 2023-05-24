@@ -27,6 +27,12 @@
     display: unset;
 }
 
+.second-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .main-div {
     display: flex;
     flex-direction: row;

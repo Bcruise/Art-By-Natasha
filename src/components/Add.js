@@ -52,9 +52,9 @@ function Add({setShowAddPage}) {
         </div>
         <div className="input-container p-2">
           <label className="p-2">Upload image</label>
-          <input className="col-10 p-2" type="file" accept="image/" onInput={(e) => {setImageURLObject({...imageURLObject,
+          <input className="col-10 p-2" type="file" accept="image/" onInput={(e) => setImageURLObject({...imageURLObject,
             image: e.target.files[0]
-          });console.log(imageURLObject)}}></input>
+          })}></input>
         </div>
         {!hideURLOption && <div className="input-container p-2">
           <label className="p-2">Etsy shop link for image</label>

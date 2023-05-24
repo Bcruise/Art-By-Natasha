@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import LargeImageScroller from '../components/LargeImageScroller';
 import Add from '../components/Add';
+import SubPage from '../components/SubPage';
 import $ from 'jquery'; 
 
 function Home() {
@@ -40,7 +41,7 @@ function Home() {
         $('.home').css({
           display: 'none'
         });
-      },2500);
+      },1500);
 
     } else if ($('.home')[0].style.opacity == 0) {
       $('.largeImageHome').css({
@@ -63,7 +64,7 @@ function Home() {
         $('.largeImageHome').css({
           display: 'none'
         });
-      },2500)
+      },1500)
     }
   }
 
@@ -73,14 +74,16 @@ function Home() {
       <div className="home faded">
         <Navbar />
          <div className="container">
-          <div className="row main-div col-12">
-            {testArray.map(image => 
-              <img className="col-4" 
-                src={image.image}
-                alt="img"
-                onClick={() => {setTestArrayNum(image.id); ToggleLargeImage()}}
-              ></img>
-            )}
+          <div className="second-container col-12">
+            <div className="row main-div col-10">
+              {testArray.map(image => 
+                <img className="col-4" 
+                  src={image.image}
+                  alt="img"
+                  onClick={() => {setTestArrayNum(image.id); ToggleLargeImage()}}
+                ></img>
+              )}
+            </div>
           </div>
         </div>
         <Footer /> 
