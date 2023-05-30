@@ -25,6 +25,39 @@
     height: 15rem;
 }
 
+.top img {
+    height: 15rem;
+    width: calc((15rem/598)*633);
+    cursor: pointer;
+    padding: 5px;
+}
+
+.top div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link {
+    color: #333;
+    height: 2rem;
+    width: 2rem;
+}
+
+.link:hover {
+    animation: fadeEffect 1s infinite;
+}
+
+@keyframes fadeEffect {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+}
+
 .bottom {
     display: flex;
     justify-content: center;

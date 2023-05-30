@@ -5,7 +5,7 @@ function Footer() {
   const currentYear = moment().format('YYYY');
   return (
     <div className="footer">
-      <span className="first-footer" dangerouslySetInnerHTML={{ "__html": "&copy;" }} /><span> {currentYear} Art By Natasha</span>
+      <span className="first-footer" dangerouslySetInnerHTML={{ "__html": "&copy;" }} /><span> {currentYear} Art by Natasha Studio</span>
     </div>
   );
 }
