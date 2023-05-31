@@ -14,16 +14,16 @@ function Navbar({setChosenPage}) {
         <div className="col-12 top">
           <div className="col-4">
             <a href="https://www.etsy.com/uk/shop/ArtbyNatashaStudio?ref=profile_header">
-              <FontAwesomeIcon className="link" icon={faBagShopping} />
+              <FontAwesomeIcon className="link bag" icon={faBagShopping} />
             </a>
           </div>
           <img className="col-4" src={Logo} onClick={() => setChosenPage('Home')}></img>
           <div className="col-4">
             <a href="https://m.facebook.com/100063269947728">
-              <FontAwesomeIcon className="link m-1" icon={faFacebook} />
+              <FontAwesomeIcon className="link m-1 facebook" icon={faFacebook} />
             </a>
             <a href="https://www.instagram.com/tash.dudley/?h;=en">
-              <FontAwesomeIcon className="link m-1" icon={faInstagram} />
+              <FontAwesomeIcon className="link m-1 instagram" icon={faInstagram} />
             </a>
           </div>
         </div>

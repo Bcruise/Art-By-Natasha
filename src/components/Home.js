@@ -1,4 +1,5 @@
 import '../styling/Home.css';
+import '../styling/LargeImageScroller.css';
 import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -18,8 +19,10 @@ function Home() {
   
   const Images = () => {
     
-      if (chosenPage === 'Home') {
-        return <span>Home Pages images will go here</span>;
+      if (chosenPage === 'Home' || chosenPage === '') {
+        return <><img class="col-4" src={childrensBooksImg1} onClick={() => {setAllImagesNum(0) ; ToggleLargeImage()}} alt="img"></img>
+        <img class="col-4" src={patternsImg1} alt="img" onClick={() => setAllImagesNum(1)}></img>
+        <img class="col-4" src={commissionsImg1} alt="img" onClick={() => setAllImagesNum(2)}></img></>;
       } else if (chosenPage === 'Childrens Books') {
         return <img class="col-4" src={childrensBooksImg1} alt="img"></img>;
       } else if (chosenPage === 'Patterns') {
@@ -54,13 +57,45 @@ function Home() {
       $('.home').css({
         opacity: 0,
         overflowY: 'hidden'
+      });
+
+      $('.arrow').css({        
+        opacity: 0,
+        display: 'none'
+      });
+
+      $('.X').css({        
+        opacity: 0,
+        display: 'none'
+      });
+
+      $('body').css({
+        pointerEvents: 'none'
       })
       
+      setTimeout(function () {
+        $('.arrow').css({        
+          display: 'unset'
+        });
+        $('.X').css({
+          display: 'unset'
+        });
+      },1000);
+
       setTimeout(function () {
         $('.home').css({
           display: 'none'
         });
-      },1500);
+        $('.arrow').css({        
+          opacity: 1
+        });
+        $('.X').css({        
+          opacity: 1
+        });
+        $('body').css({
+          pointerEvents: 'unset'
+        });
+      },2000);
 
     } else if ($('.home')[0].style.opacity == 0) {
       $('.largeImageHome').css({
@@ -73,6 +108,10 @@ function Home() {
         overflowY: 'unset'
       });
 
+      $('body').css({
+        pointerEvents: 'none'
+      });
+
       setTimeout(function () {
         $('.home').css({
           opacity: 1,
@@ -83,7 +122,10 @@ function Home() {
         $('.largeImageHome').css({
           display: 'none'
         });
-      },1500)
+        $('body').css({
+          pointerEvents: 'unset'
+        });
+      },2000)
     }
   }
 
@@ -92,7 +134,7 @@ function Home() {
     <>
       <div className="home faded">
         <Navbar setChosenPage={setChosenPage}/>
-          <SubPage chosenPage={chosenPage} Images={Images}/>
+          <SubPage Images={Images} />
         <Footer /> 
       </div>
     

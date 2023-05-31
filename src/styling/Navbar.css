@@ -41,9 +41,21 @@
 
 .link {
     color: #333;
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
 }
+
+.facebook {
+    color: #4267B2;
+}
+
+.bag {
+    color: #008080;
+}
+
+.instagram {
+    color: #E4405F;
+  }
 
 .link:hover {
     animation: fadeEffect 1s infinite;
