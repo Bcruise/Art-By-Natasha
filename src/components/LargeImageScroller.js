@@ -3,11 +3,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight, faX  } from '@fortawesome/free-solid-svg-icons';
 
 //Images
-import childrensBooksImg1 from '../images/Calendar.png';
-import patternsImg1 from '../images/PlanMyDinnerPicture.png';
-import commissionsImg1 from '../images/ReadMe.png';
+import { allImages } from '../data/images';
+import { useEffect, useState } from 'react';
 
 function LargeImageScroller({allImagesNum, setAllImagesNum, ToggleLargeImage}) {  
+
+  const [allImagesLength, setAllImagesLength] = useState(0);
+  useEffect(() => {
+    for (let a = 0; a < allImages.length; a++) {
+      setAllImagesLength(allImagesLength + allImages[a].pictures.length);
+    }
+  }, []);
   
   // scroll through the portfolio images
   const changeImage = () => {
@@ -19,22 +25,6 @@ function LargeImageScroller({allImagesNum, setAllImagesNum, ToggleLargeImage}) {
     }    
   };   
 
-  // images object
-  const allImages = [
-    {
-      "image": childrensBooksImg1,
-      "id": 0
-    },
-    {
-      "image": patternsImg1,
-      "id": 1
-    },
-    {
-      "image": commissionsImg1,
-      "id": 2
-    },
-  ]
-  
   return (
     <div className="largeImage col-12">
         <div className="left p-3">

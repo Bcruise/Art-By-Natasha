@@ -46,7 +46,8 @@ function Home() {
     if($('.home')[0].style.opacity === '' || $('.home')[0].style.opacity == 1) {
 
       $('.largeImageHome').css({        
-        opacity: 1
+        opacity: 1,
+        display: 'unset'
       });
 
       $('.home').css({
@@ -114,9 +115,6 @@ function Home() {
       },100)
 
       setTimeout(function () {
-        $('.largeImageHome').css({
-          display: 'none'
-        });
         $('body').css({
           pointerEvents: 'unset'
         });
