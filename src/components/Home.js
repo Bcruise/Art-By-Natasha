@@ -7,28 +7,24 @@ import LargeImageScroller from '../components/LargeImageScroller';
 import Add from '../components/Add';
 import SubPage from '../components/SubPage';
 import $ from 'jquery'; 
-
-//Images
-import childrensBooksImg1 from '../images/Calendar.png';
-import patternsImg1 from '../images/PlanMyDinnerPicture.png';
-import commissionsImg1 from '../images/ReadMe.png';
+import { allImages } from '../data/images';
 
 function Home() {
-
+  
   const [chosenPage, setChosenPage] = useState('');  
   
   const Images = () => {
     
       if (chosenPage === 'Home' || chosenPage === '') {
-        return <><img class="col-4" src={childrensBooksImg1} onClick={() => {setAllImagesNum(0) ; ToggleLargeImage()}} alt="img"></img>
-        <img class="col-4" src={patternsImg1} alt="img" onClick={() => setAllImagesNum(1)}></img>
-        <img class="col-4" src={commissionsImg1} alt="img" onClick={() => setAllImagesNum(2)}></img></>;
+        return <><img class="col-4" src={allImages[0].pictures[0]} onClick={() => {setAllImagesNum(0) ; ToggleLargeImage()}} alt="img"></img>
+        <img class="col-4" src={allImages[1].pictures[0]} alt="img" onClick={() => {setAllImagesNum(1) ; ToggleLargeImage()}}></img>
+        <img class="col-4" src={allImages[2].pictures[0]} alt="img" onClick={() => {setAllImagesNum(2) ; ; ToggleLargeImage()}}></img></>;
       } else if (chosenPage === 'Childrens Books') {
-        return <img class="col-4" src={childrensBooksImg1} alt="img"></img>;
+        return <img class="col-4" src={allImages[0].pictures[0]} alt="img"></img>;
       } else if (chosenPage === 'Patterns') {
-        return <img class="col-4" src={patternsImg1} alt="img"></img>;
+        return <img class="col-4" src={allImages[1].pictures[0]} alt="img"></img>;
       } else if (chosenPage === 'Commissions') {
-        return <img class="col-4" src={commissionsImg1} alt="img"></img>;
+        return <img class="col-4" src={allImages[2].pictures[0]} alt="img"></img>;
       }
     
   };
@@ -50,7 +46,6 @@ function Home() {
     if($('.home')[0].style.opacity === '' || $('.home')[0].style.opacity == 1) {
 
       $('.largeImageHome').css({        
-        display: 'unset',
         opacity: 1
       });
 
