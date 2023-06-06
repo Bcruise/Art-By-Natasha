@@ -14,13 +14,23 @@ function Home() {
   const [chosenPage, setChosenPage] = useState('');  
   
   const Images = () => {
-    
+
+    const everyPicture = allImages.flatMap(img => img.title === 'all images' ? img.pictures : []);
+
       if (chosenPage === 'Home' || chosenPage === '') {
-        return <><img class="col-4" src={allImages[0].pictures[0]} onClick={() => {setAllImagesNum(0) ; ToggleLargeImage()}} alt="img"></img>
-        <img class="col-4" src={allImages[1].pictures[0]} alt="img" onClick={() => {setAllImagesNum(1) ; ToggleLargeImage()}}></img>
-        <img class="col-4" src={allImages[2].pictures[0]} alt="img" onClick={() => {setAllImagesNum(2) ; ; ToggleLargeImage()}}></img></>;
+        return (
+          <>
+            {allImages.flatMap(im => img.title === 'all images' ? img.pictures : []).map(img => 
+              <img className="col-4" src={img.image} onClick={() => {setAllImagesNum(img.id); ToggleLargeImage()}} alt="img" />
+            )}
+          </>
+        );
       } else if (chosenPage === 'Childrens Books') {
-        return <img class="col-4" src={allImages[0].pictures[0]} alt="img"></img>;
+        return (
+          <>
+            {allImages.map(obj => obj.title === 'childrens books' && <img className="col-4" src={obj.image} onClick={() => {setAllImagesNum(obj.id); ToggleLargeImage()}} alt="img" />)}
+          </>
+        )
       } else if (chosenPage === 'Patterns') {
         return <img class="col-4" src={allImages[1].pictures[0]} alt="img"></img>;
       } else if (chosenPage === 'Commissions') {
