@@ -1,11 +1,3 @@
-/* {testArray.map(image => 
-                <img className="col-4" 
-                  src={image.image}
-                  alt="img"
-                  onClick={() => {setTestArrayNum(image.id); ToggleLargeImage()}}
-                ></img>
-              )}*/
-
 
 function SubPage({Images}) {
   

@@ -6,15 +6,15 @@ import commissionsImg1 from '../images/ReadMe.png';
 const allImages = [
     {
         "title": "childrens books",
-        "pictures": childrensBooksImg1
+        "pictures": [childrensBooksImg1, childrensBooksImg1]
     },
     {
         "title": "patterns",
-        "pictures": patternsImg1
+        "pictures": [patternsImg1]
     },
     {
         "title": "commissions",
-        "pictures": commissionsImg1
+        "pictures": [commissionsImg1]
     },
     {
         "title": "all images",

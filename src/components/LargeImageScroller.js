@@ -7,23 +7,28 @@ import { allImages } from '../data/images';
 import { useEffect, useState } from 'react';
 
 function LargeImageScroller({allImagesNum, setAllImagesNum, ToggleLargeImage}) {  
-
-  const [allImagesLength, setAllImagesLength] = useState(0);
-  useEffect(() => {
-    for (let a = 0; a < allImages.length; a++) {
-      setAllImagesLength(allImagesLength + allImages[a].pictures.length);
-    }
-  }, []);
+ 
   
   // scroll through the portfolio images
   const changeImage = () => {
-    if (allImagesNum !== (0-1)) {
-      //CHANGE THE ABOVE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      setAllImagesNum( allImagesNum + 1 );
+    const allImagesLength = allImages.find(obj => obj.title === 'all images').pictures.length;
+    if (allImagesNum !== (allImagesLength-1)) {
+      setAllImagesNum(allImagesNum + 1);
     } else {
       setAllImagesNum(0);
     }    
   };   
+
+  const [chosenLargeImage, setChosenLargeImage] = useState();
+  const chosenImage = () => {
+    return (
+      <>
+        {allImages.flatMap(img => img.title === 'all images' ? img.pictures : []).map(img => img.id === allImagesNum &&
+          <img src={img.image} alt="img" />
+        )}
+      </>
+    );
+  }
 
   return (
     <div className="largeImage col-12">
@@ -33,12 +38,7 @@ function LargeImageScroller({allImagesNum, setAllImagesNum, ToggleLargeImage}) {
           </div>
         </div> 
         
-        {allImages.map(image => (image.id === allImagesNum && <img 
-          src={image.image} 
-          alt="img" 
-          className="col-4"
-        >
-        </img>))}
+        {chosenImage()}
 
         <div className="right p-3">
           <div className="right-inner-div">

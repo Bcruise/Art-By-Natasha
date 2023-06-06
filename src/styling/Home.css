@@ -49,9 +49,9 @@
 
 .main-div img {
     padding: .5rem;
+    cursor: pointer;
 }
 
-.main-div img:hover {
+.home-image:hover {
     filter: brightness(85%);
-    cursor: pointer;
 }

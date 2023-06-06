@@ -13,37 +13,45 @@ function Home() {
   
   const [chosenPage, setChosenPage] = useState('');  
   
-  const Images = () => {
-
-    const everyPicture = allImages.flatMap(img => img.title === 'all images' ? img.pictures : []);
-
-      if (chosenPage === 'Home' || chosenPage === '') {
-        return (
-          <>
-            {allImages.flatMap(im => img.title === 'all images' ? img.pictures : []).map(img => 
-              <img className="col-4" src={img.image} onClick={() => {setAllImagesNum(img.id); ToggleLargeImage()}} alt="img" />
-            )}
-          </>
-        );
-      } else if (chosenPage === 'Childrens Books') {
-        return (
-          <>
-            {allImages.map(obj => obj.title === 'childrens books' && <img className="col-4" src={obj.image} onClick={() => {setAllImagesNum(obj.id); ToggleLargeImage()}} alt="img" />)}
-          </>
-        )
-      } else if (chosenPage === 'Patterns') {
-        return <img class="col-4" src={allImages[1].pictures[0]} alt="img"></img>;
-      } else if (chosenPage === 'Commissions') {
-        return <img class="col-4" src={allImages[2].pictures[0]} alt="img"></img>;
-      }
-    
-  };
-
-  
   //change the selected image number for when going into LargeImageScroller
   const [allImagesNum, setAllImagesNum] = useState(0);
   const [showAddPage, setShowAddPage] = useState(false);
   
+  const Images = () => {
+    
+      if (chosenPage === 'Home' || chosenPage === '') {
+        return (
+          <>
+            {allImages.flatMap(img => img.title === 'all images' ? img.pictures : []).map(img => 
+              <img className="col-4 home-image" src={img.image} 
+              onClick={() => {setAllImagesNum(img.id) ; ToggleLargeImage()}} alt="img" />
+            )}
+          </>
+        );
+      } else if (chosenPage === 'Childrens Books') {
+        const imagesToShow = allImages.find(obj => obj.title === "childrens books").pictures;
+        return (
+          <>
+            {imagesToShow.map(obj => <img className="col-4 sub-image" src={obj} alt="img" />)}
+          </>
+        )
+      } else if (chosenPage === 'Patterns') {
+        const imagesToShow = allImages.find(obj => obj.title === "patterns").pictures;
+        return (
+          <>
+            {imagesToShow.map(obj => <img className="col-4 sub-image" src={obj} alt="img" />)}
+          </>
+        )
+      } else if (chosenPage === 'Commissions') {
+        const imagesToShow = allImages.find(obj => obj.title === "commissions").pictures;
+        return (
+          <>
+            {imagesToShow.map(obj => <img className="col-4 sub-image" src={obj} alt="img" />)}
+          </>
+        )
+      }  
+  };
+    
   //load add page on ctrl + enter
   document.addEventListener('keydown',(e)=>{
     if(e.ctrlKey && e.key === 'Enter') {
@@ -147,6 +155,7 @@ function Home() {
             allImagesNum={allImagesNum} 
             setAllImagesNum={setAllImagesNum}
             ToggleLargeImage={ToggleLargeImage}
+            setChosenPage={setChosenPage}
           />
         </div>
 
