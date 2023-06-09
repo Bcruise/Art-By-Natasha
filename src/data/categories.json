@@ -1,24 +1,11 @@
 [
     {
-        "title": "Childrens Books",
-        "items": 
-            [
-                "'../images/Calendar.png'"
-            ]
-        
+        "title": "Childrens Books"        
     },
     {
-        "title": "Patterns",
-        "items":
-            [
-                "'../images/Calendar.png'"
-            ]
+        "title": "Commissions"
     },
     {
-        "title": "Commissions",
-        "items":
-            [
-                "'../images/ReadMe.png'"
-            ]
+        "title": "Patterns"
     }
 ]
