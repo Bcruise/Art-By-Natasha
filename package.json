@@ -1,6 +1,7 @@
 {
   "name": "tashssite",
   "version": "0.1.0",
+  "homepage": "https://Bcruise.github.io/Art-By-Natasha",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
@@ -14,7 +15,6 @@
     "aws-sdk": "^2.1346.0",
     "bootstrap": "^5.2.3",
     "browserify-zlib": "^0.2.0",
-    "express": "^4.18.2",
     "fs": "^0.0.1-security",
     "html-react-parser": "^3.0.16",
     "jquery": "^3.6.4",
@@ -32,6 +32,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -59,6 +61,7 @@
     "assert": "^2.0.0",
     "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.0",
+    "gh-pages": "^5.0.0",
     "https-browserify": "^1.0.0",
     "os-browserify": "^0.3.0",
     "process": "^0.11.10",

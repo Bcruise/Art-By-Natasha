@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import LargeImageScroller from '../components/LargeImageScroller';
-import Add from '../components/Add';
 import SubPage from '../components/SubPage';
 import $ from 'jquery'; 
 import { allImages } from '../data/images';
@@ -158,8 +157,6 @@ function Home() {
             setChosenPage={setChosenPage}
           />
         </div>
-
-        {showAddPage && <Add setShowAddPage={setShowAddPage}/>}
 
     </>
 

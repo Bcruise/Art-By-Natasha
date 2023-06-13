@@ -4,7 +4,6 @@ import { faArrowLeft, faArrowRight, faX  } from '@fortawesome/free-solid-svg-ico
 
 //Images
 import { allImages } from '../data/images';
-import { useEffect, useState } from 'react';
 
 function LargeImageScroller({allImagesNum, setAllImagesNum, ToggleLargeImage}) {  
  
@@ -19,7 +18,6 @@ function LargeImageScroller({allImagesNum, setAllImagesNum, ToggleLargeImage}) {
     }    
   };   
 
-  const [chosenLargeImage, setChosenLargeImage] = useState();
   const chosenImage = () => {
     return (
       <>
@@ -32,7 +30,7 @@ function LargeImageScroller({allImagesNum, setAllImagesNum, ToggleLargeImage}) {
 
   return (
     <div className="largeImage col-12">
-        <div className="left p-3">
+        <div className="left col-2 p-3">
           <div className="left-inner-div">
             <FontAwesomeIcon icon={faArrowLeft} className="arrow faded-item" onClick={() => changeImage()}/>
           </div>
@@ -40,7 +38,7 @@ function LargeImageScroller({allImagesNum, setAllImagesNum, ToggleLargeImage}) {
         
         {chosenImage()}
 
-        <div className="right p-3">
+        <div className="right col-2 p-3">
           <div className="right-inner-div">
             <button onClick={() => ToggleLargeImage()}>
               <FontAwesomeIcon icon={faX} className="X faded-item" />
