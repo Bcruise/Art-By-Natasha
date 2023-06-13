@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/Art-By-Natasha/static/css/main.60c12e9a.css",
+    "main.js": "/Art-By-Natasha/static/js/main.1646a501.js",
+    "static/media/C12.jpg": "/Art-By-Natasha/static/media/C12.1d1cd54a51a6b591ee2f.jpg",
+    "static/media/C5.jpg": "/Art-By-Natasha/static/media/C5.7ce0b2a2929d8c7ac82c.jpg",
+    "static/media/C7.jpg": "/Art-By-Natasha/static/media/C7.45655e7eab5f89dfd194.jpg",
+    "static/media/C3.jpg": "/Art-By-Natasha/static/media/C3.c519e67fd716e95b1ace.jpg",
+    "static/media/C2.jpg": "/Art-By-Natasha/static/media/C2.6262235c5de9e8e2a7a2.jpg",
+    "static/media/C10.jpg": "/Art-By-Natasha/static/media/C10.14f64eb06e73dc7640d5.jpg",
+    "static/media/C14.jpg": "/Art-By-Natasha/static/media/C14.019a105bfd1b35cab2c8.jpg",
+    "static/media/P5.jpg": "/Art-By-Natasha/static/media/P5.7594f9580b5ab98d920a.jpg",
+    "static/media/P4.jpg": "/Art-By-Natasha/static/media/P4.58fea65999717e942121.jpg",
+    "static/media/CB1.jpg": "/Art-By-Natasha/static/media/CB1.99cb3ae6097afcd91977.jpg",
+    "static/media/C6.jpg": "/Art-By-Natasha/static/media/C6.c16df05d0c335289260d.jpg",
+    "static/media/C11.jpg": "/Art-By-Natasha/static/media/C11.1c9b3e61c27fc8b4c1c5.jpg",
+    "static/media/CB2.jpg": "/Art-By-Natasha/static/media/CB2.17ab44e7b0b1bd6de7b2.jpg",
+    "static/media/C4.jpg": "/Art-By-Natasha/static/media/C4.ab57600c13b99442a74b.jpg",
+    "static/media/CB4.jpg": "/Art-By-Natasha/static/media/CB4.c2ebe81d493d0bd4d1f8.jpg",
+    "static/media/C1.jpg": "/Art-By-Natasha/static/media/C1.08a32812a876e74ab875.jpg",
+    "static/media/C13.jpg": "/Art-By-Natasha/static/media/C13.8017fc0e48edee091954.jpg",
+    "static/media/CB3.jpg": "/Art-By-Natasha/static/media/CB3.7bc03ee2db12f8d2cd93.jpg",
+    "static/media/P1.jpg": "/Art-By-Natasha/static/media/P1.6324d0a9b9e3611b6d69.jpg",
+    "static/media/CB5.jpg": "/Art-By-Natasha/static/media/CB5.39549ecb6d7d55f94375.jpg",
+    "static/media/Logo.png": "/Art-By-Natasha/static/media/Logo.7aebe6d873d93030bf69.png",
+    "static/media/C9.jpg": "/Art-By-Natasha/static/media/C9.3e8c9e554b1488addde6.jpg",
+    "static/media/C8.jpg": "/Art-By-Natasha/static/media/C8.255fdf6255734eb2b2b4.jpg",
+    "static/media/P3.jpg": "/Art-By-Natasha/static/media/P3.12873b76ee6cbd87ab2c.jpg",
+    "static/media/P2.jpg": "/Art-By-Natasha/static/media/P2.8d2ae07ac1e8033358b6.jpg",
+    "index.html": "/Art-By-Natasha/index.html",
+    "main.60c12e9a.css.map": "/Art-By-Natasha/static/css/main.60c12e9a.css.map",
+    "main.1646a501.js.map": "/Art-By-Natasha/static/js/main.1646a501.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.60c12e9a.css",
+    "static/js/main.1646a501.js"
+  ]
+}
