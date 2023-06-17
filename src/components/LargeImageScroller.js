@@ -5,18 +5,10 @@ import { faArrowLeft, faArrowRight, faX  } from '@fortawesome/free-solid-svg-ico
 //Images
 import { allImages } from '../data/images';
 
-function LargeImageScroller({allImagesNum, setAllImagesNum, ToggleLargeImage}) {  
+function LargeImageScroller({allImagesNum, ToggleLargeImage, ChangeImage}) {  
  
   
-  // scroll through the portfolio images
-  const changeImage = () => {
-    const allImagesLength = allImages.find(obj => obj.title === 'all images').pictures.length;
-    if (allImagesNum !== (allImagesLength-1)) {
-      setAllImagesNum(allImagesNum + 1);
-    } else {
-      setAllImagesNum(0);
-    }    
-  };   
+  
 
   const chosenImage = () => {
     return (
@@ -32,7 +24,7 @@ function LargeImageScroller({allImagesNum, setAllImagesNum, ToggleLargeImage}) {
     <div className="largeImage col-12">
         <div className="left col-2 p-3">
           <div className="left-inner-div">
-            <FontAwesomeIcon icon={faArrowLeft} className="arrow faded-item" onClick={() => changeImage()}/>
+            <FontAwesomeIcon icon={faArrowLeft} className="arrow faded-item" onClick={() => ChangeImage()}/>
           </div>
         </div> 
         
@@ -43,7 +35,7 @@ function LargeImageScroller({allImagesNum, setAllImagesNum, ToggleLargeImage}) {
             <button onClick={() => ToggleLargeImage()}>
               <FontAwesomeIcon icon={faX} className="X faded-item" />
             </button>
-            <FontAwesomeIcon icon={faArrowRight} className="arrow faded-item" onClick={() => changeImage()}/>
+            <FontAwesomeIcon icon={faArrowRight} className="arrow faded-item" onClick={() => ChangeImage()}/>
           </div>
         </div>
     </div>

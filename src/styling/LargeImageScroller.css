@@ -77,8 +77,19 @@
     border: none;
 }
 
+@media only screen and (max-width: 768px) {
+    .largeImage img {
+      width: calc(((100vw/12)*10)/2);
+    }
+}
+
 @media only screen and (max-width: 480px) {
     .left, .right, .X {
       display: none;
+    }
+
+    .largeImage img {
+        object-fit: contain;
+        width: 100vw;
     }
   }

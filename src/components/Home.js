@@ -1,6 +1,6 @@
 import '../styling/Home.css';
 import '../styling/LargeImageScroller.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import LargeImageScroller from '../components/LargeImageScroller';
@@ -14,7 +14,39 @@ function Home() {
   
   //change the selected image number for when going into LargeImageScroller
   const [allImagesNum, setAllImagesNum] = useState(0);
-  const [showAddPage, setShowAddPage] = useState(false);
+  
+  
+  //Swipe Effect
+  const ChangeImage = () => {
+    const allImagesLength = allImages.find(obj => obj.title === 'all images').pictures.length;
+    if (allImagesNum !== (allImagesLength-1)) {
+      setAllImagesNum(allImagesNum + 1);
+    } else {
+      setAllImagesNum(0);
+    }    
+  };   
+
+  const [touchStart, setTouchStart] = useState(null)
+  const [touchEnd, setTouchEnd] = useState(null)
+
+  const minSwipeDistance = 50 
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null)
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX)
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > minSwipeDistance
+    const isRightSwipe = distance < -minSwipeDistance
+    if (isLeftSwipe || isRightSwipe) {
+      ChangeImage()
+    }
+  }
   
   const Images = () => {
     
@@ -23,7 +55,8 @@ function Home() {
           <>
             {allImages.flatMap(img => img.title === 'all images' ? img.pictures : []).map(img => 
               <img className="col-4 home-image" src={img.image} 
-              onClick={() => {setAllImagesNum(img.id) ; ToggleLargeImage()}} alt="img" />
+              onClick={() => {setAllImagesNum(img.id) ; ToggleLargeImage()}} alt="img" 
+              onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}/>
             )}
           </>
         );
@@ -31,33 +64,29 @@ function Home() {
         const imagesToShow = allImages.find(obj => obj.title === "childrens books").pictures;
         return (
           <>
-            {imagesToShow.map(obj => <img className="col-4 sub-image" src={obj} alt="img" />)}
+            {imagesToShow.map(obj => <img className="col-4 sub-image" src={obj} alt="img" 
+            onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}/>)}
           </>
         )
       } else if (chosenPage === 'Patterns') {
         const imagesToShow = allImages.find(obj => obj.title === "patterns").pictures;
         return (
           <>
-            {imagesToShow.map(obj => <img className="col-4 sub-image" src={obj} alt="img" />)}
+            {imagesToShow.map(obj => <img className="col-4 sub-image" src={obj} alt="img" 
+            onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}/>)}
           </>
         )
       } else if (chosenPage === 'Commissions') {
         const imagesToShow = allImages.find(obj => obj.title === "commissions").pictures;
         return (
           <>
-            {imagesToShow.map(obj => <img className="col-4 sub-image" src={obj} alt="img" />)}
+            {imagesToShow.map(obj => <img className="col-4 sub-image" src={obj} alt="img" 
+            onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}/>)}
           </>
         )
       }  
   };
-    
-  //load add page on ctrl + enter
-  document.addEventListener('keydown',(e)=>{
-    if(e.ctrlKey && e.key === 'Enter') {
-      setShowAddPage(true);
-    }
-  });
-  
+      
   // Toggle between home and large image pages
   const ToggleLargeImage = () => {
     if($('.home')[0].style.opacity === '' || $('.home')[0].style.opacity == 1) {
@@ -155,6 +184,7 @@ function Home() {
             setAllImagesNum={setAllImagesNum}
             ToggleLargeImage={ToggleLargeImage}
             setChosenPage={setChosenPage}
+            changeImage={ChangeImage}
           />
         </div>
 
