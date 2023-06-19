@@ -79,7 +79,6 @@
 
 .top-large-image, .bottom-large-image {
     display: none;
-    height: 5vh !important;
 }
 
 @media only screen and (max-width: 768px) {

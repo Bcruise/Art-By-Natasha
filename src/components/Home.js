@@ -16,20 +16,24 @@ function Home() {
   const [allImagesNum, setAllImagesNum] = useState(0);
   
   
-  //Swipe Effect
   const ChangeImage = (direction) => {
+    
     const allImagesLength = allImages.find(obj => obj.title === 'all images').pictures.length;
-    console.log(direction)
-    if (allImagesNum !== (allImagesLength-1)) {
-      if (direction === 'left') {
-        setAllImagesNum(allImagesNum - 1);
-      } else if (direction === 'right' || direction === '') {
-        setAllImagesNum(allImagesNum + 1);
+    
+      if (direction === 'right' || direction === '') {
+        if (allImagesNum !== 0) {
+          setAllImagesNum(allImagesNum - 1);
+        } else {
+          setAllImagesNum(allImagesLength - 1);
+        };  
+      } else if (direction === 'left') {
+        if (allImagesNum !== (allImagesLength-1)) {
+          setAllImagesNum(allImagesNum + 1);
+        } else {
+          setAllImagesNum(0);
+        } 
       }
-    } else {
-      setAllImagesNum(0);
-    }    
-  };
+  };    
   
   const Images = () => {
     

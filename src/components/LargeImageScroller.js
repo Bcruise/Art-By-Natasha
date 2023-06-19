@@ -49,7 +49,7 @@ function LargeImageScroller({allImagesNum, ToggleLargeImage, ChangeImage}) {
   return (
     <div className="largeImage col-12">
 
-        <div className="top-large-image p-1">
+        <div className="top-large-image p-2">
           <button onClick={() => ToggleLargeImage()}>
             <FontAwesomeIcon icon={faX} className="X-sm" />
           </button>
@@ -72,7 +72,7 @@ function LargeImageScroller({allImagesNum, ToggleLargeImage, ChangeImage}) {
           </div>
         </div>
 
-        <div className="bottom-large-image p-1"></div>
+        <div className="bottom-large-image p-2"></div>
 
     </div>
   );
