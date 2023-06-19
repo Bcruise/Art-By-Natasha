@@ -17,36 +17,19 @@ function Home() {
   
   
   //Swipe Effect
-  const ChangeImage = () => {
+  const ChangeImage = (direction) => {
     const allImagesLength = allImages.find(obj => obj.title === 'all images').pictures.length;
+    console.log(direction)
     if (allImagesNum !== (allImagesLength-1)) {
-      setAllImagesNum(allImagesNum + 1);
+      if (direction === 'left') {
+        setAllImagesNum(allImagesNum - 1);
+      } else if (direction === 'right' || direction === '') {
+        setAllImagesNum(allImagesNum + 1);
+      }
     } else {
       setAllImagesNum(0);
     }    
-  };   
-
-  const [touchStart, setTouchStart] = useState(null)
-  const [touchEnd, setTouchEnd] = useState(null)
-
-  const minSwipeDistance = 50 
-
-  const onTouchStart = (e) => {
-    setTouchEnd(null)
-    setTouchStart(e.targetTouches[0].clientX)
-  }
-
-  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX)
-
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return
-    const distance = touchStart - touchEnd
-    const isLeftSwipe = distance > minSwipeDistance
-    const isRightSwipe = distance < -minSwipeDistance
-    if (isLeftSwipe || isRightSwipe) {
-      ChangeImage()
-    }
-  }
+  };
   
   const Images = () => {
     
@@ -55,8 +38,7 @@ function Home() {
           <>
             {allImages.flatMap(img => img.title === 'all images' ? img.pictures : []).map(img => 
               <img className="col-4 home-image" src={img.image} 
-              onClick={() => {setAllImagesNum(img.id) ; ToggleLargeImage()}} alt="img" 
-              onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}/>
+              onClick={() => {setAllImagesNum(img.id) ; ToggleLargeImage()}} alt="img" />
             )}
           </>
         );
@@ -64,28 +46,27 @@ function Home() {
         const imagesToShow = allImages.find(obj => obj.title === "childrens books").pictures;
         return (
           <>
-            {imagesToShow.map(obj => <img className="col-4 sub-image" src={obj} alt="img" 
-            onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}/>)}
+            {imagesToShow.map(obj => <img className="col-4 sub-image" src={obj} alt="img"/>
+            )}
           </>
         )
       } else if (chosenPage === 'Patterns') {
         const imagesToShow = allImages.find(obj => obj.title === "patterns").pictures;
         return (
           <>
-            {imagesToShow.map(obj => <img className="col-4 sub-image" src={obj} alt="img" 
-            onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}/>)}
+            {imagesToShow.map(obj => <img className="col-4 sub-image" src={obj} alt="img"/>)}
           </>
         )
       } else if (chosenPage === 'Commissions') {
         const imagesToShow = allImages.find(obj => obj.title === "commissions").pictures;
         return (
           <>
-            {imagesToShow.map(obj => <img className="col-4 sub-image" src={obj} alt="img" 
-            onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}/>)}
+            {imagesToShow.map(obj => <img className="col-4 sub-image" src={obj} alt="img"/>)}
           </>
         )
       }  
   };
+  
       
   // Toggle between home and large image pages
   const ToggleLargeImage = () => {
@@ -184,7 +165,7 @@ function Home() {
             setAllImagesNum={setAllImagesNum}
             ToggleLargeImage={ToggleLargeImage}
             setChosenPage={setChosenPage}
-            changeImage={ChangeImage}
+            ChangeImage={ChangeImage}
           />
         </div>
 

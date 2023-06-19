@@ -55,3 +55,15 @@
 .home-image:hover {
     filter: brightness(85%);
 }
+
+@media only screen and (max-width: 768px) {
+    .main-div img {
+        width: calc(((100vw/12)*10)/2);
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .main-div img {
+        width: calc(((100vw/12)*10));
+    }
+  }

@@ -52,7 +52,7 @@
     cursor: pointer;
 }
 
-.X {
+.X, .X-sm-md {
     height: 2.25rem;
     width: 2.25rem;
     font-weight: 100;
@@ -72,20 +72,36 @@
     opacity: 0.6;
 }
 
-.right-inner-div button {
+.largeImage button {
     background-color: white;
     border: none;
 }
 
-@media only screen and (max-width: 768px) {
-    .largeImage img {
-      width: calc(((100vw/12)*10)/2);
-    }
+.top-large-image, .bottom-large-image {
+    display: none;
+    height: 5vh !important;
 }
 
-@media only screen and (max-width: 480px) {
-    .left, .right, .X {
+@media only screen and (max-width: 768px) {
+    .left, .right {
       display: none;
+    }
+
+    .top-large-image, .bottom-large-image {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        width: 100vw;
+
+    }
+
+    .top-large-image {
+        justify-content: end;
+    }
+
+    .largeImage {
+        flex-direction: column;
+        height: 100vh;
     }
 
     .largeImage img {
