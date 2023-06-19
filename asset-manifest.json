@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Art-By-Natasha/static/css/main.d6973803.css",
-    "main.js": "/Art-By-Natasha/static/js/main.acd753fa.js",
+    "main.css": "/Art-By-Natasha/static/css/main.5d17bcf8.css",
+    "main.js": "/Art-By-Natasha/static/js/main.24fec571.js",
     "static/media/C12.jpg": "/Art-By-Natasha/static/media/C12.1d1cd54a51a6b591ee2f.jpg",
     "static/media/C5.jpg": "/Art-By-Natasha/static/media/C5.7ce0b2a2929d8c7ac82c.jpg",
     "static/media/C7.jpg": "/Art-By-Natasha/static/media/C7.45655e7eab5f89dfd194.jpg",
@@ -28,11 +28,11 @@
     "static/media/P3.jpg": "/Art-By-Natasha/static/media/P3.12873b76ee6cbd87ab2c.jpg",
     "static/media/P2.jpg": "/Art-By-Natasha/static/media/P2.8d2ae07ac1e8033358b6.jpg",
     "index.html": "/Art-By-Natasha/index.html",
-    "main.d6973803.css.map": "/Art-By-Natasha/static/css/main.d6973803.css.map",
-    "main.acd753fa.js.map": "/Art-By-Natasha/static/js/main.acd753fa.js.map"
+    "main.5d17bcf8.css.map": "/Art-By-Natasha/static/css/main.5d17bcf8.css.map",
+    "main.24fec571.js.map": "/Art-By-Natasha/static/js/main.24fec571.js.map"
   },
   "entrypoints": [
-    "static/css/main.d6973803.css",
-    "static/js/main.acd753fa.js"
+    "static/css/main.5d17bcf8.css",
+    "static/js/main.24fec571.js"
   ]
 }
