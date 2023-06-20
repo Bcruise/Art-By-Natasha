@@ -49,7 +49,7 @@ function LargeImageScroller({allImagesNum, ToggleLargeImage, ChangeImage}) {
   return (
     <div className="largeImage col-12">
 
-        <div className="top-large-imageW">
+        <div className="top-large-image">
           <button onClick={() => ToggleLargeImage()}>
             <FontAwesomeIcon icon={faX} className="X-sm" />
           </button>
@@ -57,7 +57,7 @@ function LargeImageScroller({allImagesNum, ToggleLargeImage, ChangeImage}) {
 
         <div className="left col-2 p-3">
           <div className="left-inner-div">
-            <FontAwesomeIcon icon={faArrowLeft} className="arrow faded-item" onClick={() => ChangeImage()}/>
+            <FontAwesomeIcon icon={faArrowLeft} className="arrow faded-item" onClick={() => ChangeImage('right')}/>
           </div>
         </div> 
         
@@ -68,7 +68,7 @@ function LargeImageScroller({allImagesNum, ToggleLargeImage, ChangeImage}) {
             <button onClick={() => ToggleLargeImage()}>
               <FontAwesomeIcon icon={faX} className="X faded-item" />
             </button>
-            <FontAwesomeIcon icon={faArrowRight} className="arrow faded-item" onClick={() => ChangeImage()}/>
+            <FontAwesomeIcon icon={faArrowRight} className="arrow faded-item" onClick={() => ChangeImage('left')}/>
           </div>
         </div>
 
