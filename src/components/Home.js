@@ -80,7 +80,7 @@ function Home() {
   const ToggleLargeImage = () => {
     if($('.home')[0].style.opacity === '' || $('.home')[0].style.opacity == 1) {
 
-      $('.largeImageHome').css({        
+      $('.largeImageHome, .largeImage, .top-large-image, .bottom-large-image').css({
         opacity: 1,
         display: 'unset'
       });
