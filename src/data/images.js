@@ -40,7 +40,7 @@ const allImages = [
     {
         "title": "all images",
         "pictures": [{image: CB1, id: 0}, {image: CB2, id: 1}, {image: CB3, id: 2}, {image: CB4, id: 3}, {image: CB5, id: 4}, 
-                     {image: P5, id: 5}, {image: P4, id: 6}, {image: P3, id: 7}, {image: P4, id: 8}, {image: P5, id: 9},
+                     {image: P1, id: 5}, {image: P2, id: 6}, {image: P3, id: 7}, {image: P4, id: 8}, {image: P5, id: 9},
                      {image: C1, id: 10}, {image: C2, id: 11}, {image: C3, id: 12}, {image: C4, id: 13}, {image: C5, id: 14},
                      {image: C6, id: 15}, {image: C7, id: 16}, {image: C8, id: 17}, {image: C9, id: 18}, {image: C10, id: 19},
                      {image: C11, id: 20}, {image: C12, id: 21}, {image: C13, id: 22}, {image: C14, id: 23}]
