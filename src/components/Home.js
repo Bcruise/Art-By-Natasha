@@ -21,18 +21,22 @@ function Home() {
     const allImagesLength = allImages.find(obj => obj.title === 'all images').pictures.length;
     
       if (direction === 'right' || direction === '') {
+
         if (allImagesNum !== 0) {
           setAllImagesNum(allImagesNum - 1);
         } else {
           setAllImagesNum(allImagesLength - 1);
         };  
+
       } else if (direction === 'left') {
+        
         if (allImagesNum !== (allImagesLength-1)) {
           setAllImagesNum(allImagesNum + 1);
         } else {
           setAllImagesNum(0);
-        } 
-      }
+        }; 
+
+      };
   };    
   
   const Images = () => {
@@ -125,7 +129,7 @@ function Home() {
       },2000);
 
     } else if ($('.home')[0].style.opacity == 0) {
-      $('.largeImageHome').css({
+      $('.largeImageHome, .largeImage, .top-large-image, .bottom-large-image').css({
         opacity: 0
       });
 
