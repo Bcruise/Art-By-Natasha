@@ -80,9 +80,8 @@ function Home() {
   const ToggleLargeImage = () => {
     if($('.home')[0].style.opacity === '' || $('.home')[0].style.opacity == 1) {
 
-      $('.largeImageHome, .largeImage, .top-large-image, .bottom-large-image').css({
-        opacity: 1,
-        display: 'unset'
+      $('.largeImageHome').css({
+        opacity: 1
       });
 
       $('.home').css({
@@ -129,7 +128,8 @@ function Home() {
       },2000);
 
     } else if ($('.home')[0].style.opacity == 0) {
-      $('.largeImageHome, .largeImage, .top-large-image, .bottom-large-image').css({
+
+      $('.largeImageHome').css({
         opacity: 0
       });
 

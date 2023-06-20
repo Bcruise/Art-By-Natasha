@@ -72,8 +72,6 @@ function LargeImageScroller({allImagesNum, ToggleLargeImage, ChangeImage}) {
           </div>
         </div>
 
-        <div className="bottom-large-image p-2"></div>
-
     </div>
   );
 }
