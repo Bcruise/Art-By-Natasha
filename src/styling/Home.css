@@ -56,6 +56,25 @@
     filter: brightness(85%);
 }
 
+.spinning-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid #ccc;
+    border-top-color: black;
+    animation: spin 1s infinite linear;
+    margin: 10px auto;
+}
+  
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+    transform: rotate(360deg);
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .main-div img {
         width: calc(((100vw/12)*10)/2);
@@ -67,3 +86,4 @@
         width: calc(((100vw/12)*10));
     }
   }
+
